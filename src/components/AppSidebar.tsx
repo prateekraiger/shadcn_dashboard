@@ -1,8 +1,5 @@
-
 const AppSidebar = () => {
-  return (
-    <div>AppSidebar</div>
-  )
-}
+  return <div>AppSidebar</div>;
+};
 
-export default AppSidebar
+export default AppSidebar;
