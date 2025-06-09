@@ -177,10 +177,9 @@ const SingleUserPage = () => {
               <h1 className="text-xl font-semibold">Pratik.dev</h1>
             </div>
             <p className="text-sm text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              laboriosam aut magnam hic consectetur saepe cum fugiat, ab
-              voluptate nulla rerum. Nemo animi rerum veniam, ipsam maxime
-              eveniet modi quaerat.
+              Pratik is a valued member of our platform, known for consistent
+              contributions and active participation in the community. Connect
+              with Pratik to collaborate on new projects or share insights.
             </p>
           </div>
 

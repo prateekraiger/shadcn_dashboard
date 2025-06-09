@@ -47,7 +47,8 @@ const TodoList = () => {
             <div className="flex items-center gap-4">
               <Checkbox id="item1" checked />
               <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Check out the new design system documentation and provide your
+                input.
               </label>
             </div>
           </Card>
@@ -55,7 +56,7 @@ const TodoList = () => {
             <div className="flex items-center gap-4">
               <Checkbox id="item1" checked />
               <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Complete the onboarding process for the new analytics tool.
               </label>
             </div>
           </Card>
@@ -63,7 +64,8 @@ const TodoList = () => {
             <div className="flex items-center gap-4">
               <Checkbox id="item1" />
               <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Review the latest analytics report and share your feedback with
+                the team.
               </label>
             </div>
           </Card>
@@ -71,7 +73,8 @@ const TodoList = () => {
             <div className="flex items-center gap-4">
               <Checkbox id="item1" checked />
               <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Update your profile information to keep your account secure and
+                up to date.
               </label>
             </div>
           </Card>
@@ -79,7 +82,8 @@ const TodoList = () => {
             <div className="flex items-center gap-4">
               <Checkbox id="item1" />
               <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Schedule a meeting with the product team to discuss new
+                features.
               </label>
             </div>
           </Card>

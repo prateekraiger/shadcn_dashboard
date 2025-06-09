@@ -24,6 +24,11 @@ const HomePage = () => {
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
         <CardList title="Popular Content" />
+        <div className="mt-4 text-sm text-muted-foreground">
+          <strong>Popular Content:</strong> See which articles, videos, or
+          products are trending on your platform. Use this insight to boost
+          engagement and tailor your content strategy.
+        </div>
       </div>
     </div>
   );
