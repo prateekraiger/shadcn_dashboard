@@ -16,6 +16,12 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
 
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+import AddLineChart from "@/components/AddLineChart";
 const SingleUserPage = () => {
   return (
     <div>
@@ -107,8 +113,15 @@ const SingleUserPage = () => {
 
           {/* info badges container */}
           <div className="bg-primary-foreground p-4 rounded-lg">
-            <h1 className="text-xl font-semibold">User Information</h1>
-
+            <div className="flex items-center justify-between">
+              <h1 className="text-xl font-semibold">User Information</h1>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button>Edit User</Button>
+                </SheetTrigger>
+                <EditUser />
+              </Sheet>
+            </div>
             <div className="space-y-4 mt-4">
               <div className="flex flex-col gap-2 mb-8">
                 <p className="text-sm text-muted-foreground">
@@ -155,10 +168,27 @@ const SingleUserPage = () => {
         {/* right */}
         <div className="w-full xl:w-2/3 space-y-6">
           {/* user card container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">UserCard</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://images.pexels.com/photos/123929/pexels-photo-123929.jpeg?auto=compress&cs=tinysrgb&w=600" />
+                <AvatarFallback>PR</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">Pratik.dev</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+              laboriosam aut magnam hic consectetur saepe cum fugiat, ab
+              voluptate nulla rerum. Nemo animi rerum veniam, ipsam maxime
+              eveniet modi quaerat.
+            </p>
+          </div>
 
           {/* chart container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            Chart
+            <AddLineChart />
+          </div>
         </div>
       </div>
     </div>
