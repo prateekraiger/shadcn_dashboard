@@ -1,7 +1,19 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 const users = [
   {
@@ -33,31 +45,58 @@ const UsersPage = () => {
       <h1 className="text-2xl font-bold mb-6">Users</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {users.map((user) => (
-          <Card
-            key={user.username}
-            className="hover:shadow-lg transition-shadow"
-          >
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <Avatar>
-                <AvatarImage src={user.avatar} />
-                <AvatarFallback>{user.name[0]}</AvatarFallback>
-              </Avatar>
-              <div>
-                <CardTitle className="text-lg">{user.name}</CardTitle>
-                <div className="text-xs text-muted-foreground">{user.role}</div>
+          <HoverCard key={user.username}>
+            <HoverCardTrigger asChild>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                  <Avatar>
+                    <AvatarImage src={user.avatar} />
+                    <AvatarFallback>{user.name[0]}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col">
+                    <CardTitle className="text-lg">{user.name}</CardTitle>
+                    <CardDescription className="text-xs text-muted-foreground">
+                      @{user.username}
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-2">
+                  <div className="text-sm">
+                    <span className="font-medium">Email:</span> {user.email}
+                  </div>
+                  <div className="text-sm flex items-center gap-2">
+                    <span className="font-medium">Role:</span>
+                    <Badge variant="secondary">{user.role}</Badge>
+                  </div>
+                  <Link
+                    href={`/users/${user.username}`}
+                    className="mt-2 text-primary text-sm underline"
+                  >
+                    View Profile
+                  </Link>
+                </CardContent>
+              </Card>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <Avatar>
+                  <AvatarImage src={user.avatar} />
+                  <AvatarFallback>{user.name[0]}</AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">@{user.username}</h4>
+                  <p className="text-sm">
+                    {user.name} ({user.role})
+                  </p>
+                  <div className="flex items-center pt-2">
+                    <span className="text-xs text-muted-foreground">
+                      {user.email}
+                    </span>
+                  </div>
+                </div>
               </div>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-1">
-              <div className="text-sm font-medium">@{user.username}</div>
-              <div className="text-xs text-muted-foreground">{user.email}</div>
-              <Link
-                href={`/users/${user.username}`}
-                className="mt-2 text-primary text-xs underline"
-              >
-                View Profile
-              </Link>
-            </CardContent>
-          </Card>
+            </HoverCardContent>
+          </HoverCard>
         ))}
       </div>
     </div>
